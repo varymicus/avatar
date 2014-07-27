@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="style.css"></link>
+<title>Interactive Avatar: the Last Airbender CYOA</title>
+</head>
+
+<body>
+<div id="intro">
+    <p class="narration">
+    You're granted the opportunity to live in the Avatar world as a Bender. You have six choices: pick one of the options below. You live in a version of the world where Aang never ran away but died, the Air Nomads survived, metal bending is discovered early, the Fire Nation's war is still in its infancy, and the mistake of Aang's death means a new Water born Avatar has been born somewhere on the planet.
+    </p>
+    <p class="narration">
+    What do you choose, why do you choose it, and how do you apply what you've chosen?
+    </p>
+</div>
+<hr />
+<div id="nations">
+    <div id="water" class="nation">
+        <button id="btn_water" onclick="choose_nation('water','#3055EE','southern','foggy_swamp','northern')">Waterbending</button>
+        <p class="nation_desc">
+            The ability to manipulate water to multiple purposes; weak in the sun, subdued during the day, enhanced at night, strong under the moon.
+            <br />Completely disabled if the moon were to disappear, strongest during a full moon.
+        </p>
+        <p>Choose the style of your water bending:</p>
+        <p id="southern" class="style">
+            <button onclick="choose_style('water','southern')" disabled>Southern Style</button> The most aggressive style, able to draw water in near any environment (water/ice/snow/plants) and from the bender themselves (sweat).
+        </p>
+        <p id="foggy_swamp" class="style">
+            <button disabled onclick="choose_style('water','foggy_swamp')">Foggy Swamp Style:</button> A less fluid, more rigid style that balances offense and defense with high accuracy, but has the most trouble converting ice/snow to water and back.
+        </p>
+        <p id="northern" class="style">
+            <button disabled onclick="choose_style('water','northern')">Northern Style:</button> A more defensive style, known for converting ice and snow quickly to water, or the reverse, and is the most fond of ice forms for defense and offense.
+        </p>
+        <p>Choose 2 basic techniques you'll be known for:</p>
+        <p id="ice_claws" class="basic_tech">
+            <span class="style_requirement">southern</span>
+            <button disabled>Ice Claws:</button> Extremely sharp ice forms on the bender's fingertips. Requires Southern style and little water.
+        </p>
+        <p id="water_bullet" class="basic_tech">
+            <span class="style_requirement">none</span>
+            <button disabled>Water Bullet:</button> A longer ranged bolt of moderate water.
+        </p>
+        <p id="ice_spear" class="basic_tech">
+            <span class="style_requirement">northern</span>
+            <button disabled>Ice Spear:</button> A spear formed of Ice, with longer reach than claws, but slower to attack and requiring more water. Can be thrown. Requires Northern style.
+        </p>
+        <p id="water_whip" class="basic_tech">
+            <span class="style_requirement">none</span>
+            <button disabled>Water Whip:</button> A long fluid whip of water, able to bludgeon and quick to bear provided the water needed.
+        </p>
+        <p id="water_stream" class="basic_tech">
+            <span class="style_requirement">none</span>
+            <button disabled>Water Stream:</button> A very long ranged stream of water. Requires a steady supply of water to reach its full range.
+        </p>
+        <p>Choose 2 advanced techniques you'll be known for:</p>
+        <p id="skating" class="adv_tech">
+            <span class="style_requirement">none</span>
+            <span class="basic_requirement">none</span>
+            <button disabled>Water/Ice Skating:</button> Waterbenders with this technique can easily move across water and ice.
+        </p>
+        <p id="water_wave" class="adv_tech">
+            <span class="style_requirement">none</span>
+            <span class="basic_requirement">none</span>
+            <button disabled>Water Wave:</button> A moderate wave of water. Requires a large amount of water; slow to bear but devastating.
+        </p>
+        <p id="ice_shield" class="adv_tech">
+            <span class="style_requirement">none</span>
+            <span class="basic_requirement">none</span>
+            <button disabled>Ice Shield:</button> A defensive technique that can absorb or deflect attacks, and obscure the user.
+        </p>
+        <p id="water_jet" class="adv_tech">
+            <span class="style_requirement">none</span>
+            <span class="basic_requirement">none</span>
+            <button disabled>Water Jet:</button> A massive burst of streaming water. Hits extremely hard, but requires a steady supply of water.
+        </p>
+        <p id="ice_discs" class="adv_tech">
+            <span class="style_requirement">none</span>
+            <span class="basic_requirement">none</span>
+            <button disabled>Ice Discs:</button> The bender flings thin discs of ice capable of cutting. Requires little water; long ranged.
+        </p>
+        <p id="octopus" class="adv_tech">
+            <span class="style_requirement">none</span>
+            <span class="basic_requirement">water_whip</span>
+            <button disabled>Octopus Form:</button> A form manipulating eight long ranged tentacles of water for offense and defense - quick, powerful, and adaptable. Requires water whip and much water.
+        </p>
+        <p>Choose 1 special technique you'll be known for:</p>
+        <p id="vapor" class="adv_tech">
+            <span class="style_requirement">southern</span>
+            <button disabled>Cloud/Vapor Manipulation:</button> Extremely powerful form that can pull water from almost anywhere, including from the air itself. Requires Southern Style.
+        </p>
+        <p id="plant" class="adv_tech">
+            <span class="style_requirement">foggy_swamp</span>
+            <button disabled>Plant Bending:</button> The user can manipulate plants for offensive and defensive purposes. Requires Foggy Swamp Style.
+        </p>
+        <p id="healing" class="adv_tech">
+            <span class="style_requirement">none</span>
+            <button disabled>Healing:</button> Able to use water, especially spiritually attuned water, to heal and unblock Chi paths.
+        </p>
+        <p id="steam" class="adv_tech">
+            <span class="style_requirement">none</span>
+            <button disabled>Steam/Mist/Fog Bending:</button> The bender can manipulate water in its gas form for offensive and defensive purposes.
+        </p>
+        <p id="ice_breath" class="adv_tech">
+            <span class="style_requirement">northern</span>
+            <button disabled>Breath of Ice:</button> Northern Style benders can use this technique to quickly freeze/unfreeze things breathed upon.
+        </p>
+    </div>
+    <div id="earth" class="nation">
+        <button id="btn_earth" onclick="choose_nation('earth','#30EE55','southern','foggy_swamp','northern')">Earthbending</button>
+    </div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+
+</html>
