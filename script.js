@@ -7,22 +7,21 @@ function choose_nation(nation_id) {
     }
     
     var nation = document.getElementById(nation_id);
-    var nations = document.getElementById('nations').getElementsByTagName('div');
+    var nations = document.getElementById('nations').getElementsByTagName('div');    
+    var children;
+    var buttons;
     for(i=0; i<nations.length; i++) {
         nations[i].className = 'nation';
-        var children = nations[i].getElementsByTagName('p');
+        
+        //reset style selection
+        reset_styles(nations[i]);        
+
+        children = nations[i].getElementsByTagName('p');
         for(j=2; j<children.length; j++) {
-           //reset style selection
-            /*if(children[j].className.contains("style_selected")) {
-                children[j].className = "style";
-            }*/
-            reset_styles(nations[i]);
-            //TODO: reset cascading choices (basic, advanced, special)
-            //reset_basic();
-            //reset_special();
             //disable buttons
-            if(children[j].getElementsByTagName('button').length > 0) {
-                children[j].getElementsByTagName('button')[0].disabled = true;
+            buttons = children[j].getElementsByTagName('button');
+            if(buttons.length > 0) {
+                buttons[0].disabled = true;
             }
         }
     }
@@ -33,8 +32,8 @@ function choose_nation(nation_id) {
     
     //enable style buttons
     var styles = nation.getElementsByClassName("style");
-    for(i=0; i<styles.length; i++) {
-        styles[i].children[0].disabled = false;
+    for(k=0; k<styles.length; k++) {
+        styles[k].children[0].disabled = false;
     }
 }
 
@@ -54,19 +53,19 @@ function choose_style(style_id) {
     var sections = nation.getElementsByTagName("p");
     var style_requirements;
     var tech_requirements;
-    for(i=0; i<sections.length; i++) {
-        style_requirements = sections[i].getElementsByClassName("style_requirement");
+    for(l=0; l<sections.length; l++) {
+        style_requirements = sections[l].getElementsByClassName("style_requirement");
         if(style_requirements.length > 0) {
             //reset buttons
-            sections[i].getElementsByTagName("button")[0].disabled = true;
+            sections[l].getElementsByTagName("button")[0].disabled = true;
             
             //enable dependent buttons
             //check for style dependency
-            if(style_requirements[0].innerHTML == style_id || style_requirements[0].innerHTML == "none") {
+            if(style_requirements[0].innerHTML.contains(style_id) || style_requirements[0].innerHTML == "none") {
                 //check for tech dependency
-                tech_requirements = sections[i].getElementsByClassName("basic_requirement")
+                tech_requirements = sections[l].getElementsByClassName("basic_requirement")
                 if(tech_requirements.length == 0 || tech_requirements[0].innerHTML == "none") {
-                    sections[i].getElementsByTagName("button")[0].disabled = false;
+                    sections[l].getElementsByTagName("button")[0].disabled = false;
                 }
             }
         }
@@ -90,8 +89,8 @@ function choose_basic(basic_id) {
 
 function reset_styles(nation) {
     var styles = nation.getElementsByClassName("style_selected");
-    for(i=0; i<styles.length; i++) {
-        styles[i].className = "style";
+    for(m=0; m<styles.length; m++) {
+        styles[m].className = "style";
     }
     document.getElementById("style_choice").innerHTML = "";
     reset_basic(nation);
@@ -100,18 +99,18 @@ function reset_styles(nation) {
 
 function reset_basic(nation) {
     var techs = nation.getElementsByClassName("basic_selected");
-    for(i=0; i<techs.length; i++) {
-        techs[i].className = "basic";
+    for(n=0; n<techs.length; n++) {
+        techs[n].className = "basic";
     }
     document.getElementById("basic1_choice").innerHTML = "";
     document.getElementById("basic2_choice").innerHTML = "";
-    reset_advanced();
+    reset_advanced(nation);
 }
 
 function reset_advanced(nation) {
     var techs = nation.getElementsByClassName("advanced_selected");
-    for(i=0; i<techs.length; i++) {
-        techs[i].className = "advanced";
+    for(o=0; o<techs.length; o++) {
+        techs[o].className = "advanced";
     }
     document.getElementById("advanced1_choice").innerHTML = "";
     document.getElementById("advanced2_choice").innerHTML = "";
@@ -120,8 +119,8 @@ function reset_advanced(nation) {
 function reset_special(nation) {
     //TODO: functionality to reset special techniques
     var specials = nation.getElementsByClassName("special_selected");
-    for(i=0; i<specials.length; i++) {
-        specials[i].className = "special";
+    for(p=0; p<specials.length; p++) {
+        specials[p].className = "special";
     }
     document.getElementById("special_choice").innerHTML = "";
 }

@@ -112,6 +112,107 @@
     <div id="earth" class="nation">
         <img src="./img/earth_sigil.png" />
         <button id="btn_earth" onclick="choose_nation('earth')">Earthbending</button>
+        <p class="nation_desc">
+            The ability to manipulate earth to multiple purposes; weak when deprived of earth or rock, strong in the midst of these things.
+        </p>
+        <p>Choose the style of your earth bending:</p>
+        <p id="thundering" class="style">
+            <button disabled onclick="choose_style('thundering')">Thundering Badgermole Style</button> A slow but aggressive and brutal style--a forward moving juggernaut of earth.
+        </p>
+        <p id="blind" class="style">
+            <button disabled onclick="choose_style('blind')">Blind Badgermole Style</button> A calm and patient style, waiting and defending until the right moment to make a decisive attack.
+        </p>
+        <p id="si_wong" class="style">
+            <button disabled onclick="choose_style('si_wong')">Si Wong Desert Style</button> A more fluid and graceful form of earth bending; quick, mobile, and offensive.
+        </p>
+        <p>Choose 2 basic techniques you'll be known for:</p>
+        <p id="earth_column" class="basic">
+            <span class="style_requirement">none</span>
+            <button disabled>Earth/Stone Column</button> Used for attacks and to enhance jumps, and raise the bender up to far heights.
+        </p>
+        <p id="rock_wall" class="basic">
+            <span class="style_requirement">none</span>
+            <button disabled>Rock Wall</button> A defensive technique creating a thick barrier or earth or stone to endure attacks.
+        </p>
+        <p id="dust_cloud" class="basic">
+            <span class="style_requirement">blind si_wong</span>
+            <button disabled>Dust/Sand Cloud</button> Creates a blinding, obscuring cloud. Requires Blind Badgermole Style or Si Wong Desert Style.
+        </p>
+        <p id="pebble" class="basic">
+            <span class="style_requirement">none</span>
+            <button disabled>Pebble Barrage</button> A barrage of small quick flying rocks.
+        </p>
+        <p id="gauntlet" class="basic">
+            <span class="style_requirement">thundering</span>
+            <button disabled>Rock Gauntlet</button> A single large gauntlet of earth used for defense, but also stone crushing offensive strikes. The rest of the the body remains flexible. Requires Thundering Badgermole Style.
+        </p>
+        <p>Choose 2 advanced techniques you'll be known for:</p>
+        <p id="earth_surf" class="advanced">
+            <span class="style_requirement">thundering</span>
+            <span class="basic_requirement">none</span>
+            <button disabled>Earth Surfing</button>
+        </p>
+        <p id="tunnel" class="advanced">
+            <span class="style_requirement">blind</span>
+            <span class="basic_requirement">none</span>
+            <button disabled>Earth Tunneling</button>
+        </p>
+        <p id="sand_surf" class="advanced">
+            <span class="style_requirement">si_wong</span>
+            <span class="basic_requirement">none</span>
+            <button disabled>Sand Tunneling/Surfing</button>
+        </p>
+        <p id="rock_armor" class="advanced">
+            <span class="style_requirement">none</span>
+            <span class="basic_requirement">gauntlet</span>
+            <button disabled>Rock Armor</button> A defensive form for enduring blows and delivering punishing attacks. Requires Rock Gauntlet.
+        </p>
+        <p id="rock_wave" class="advanced">
+            <span class="style_requirement">none</span>
+            <span class="basic_requirement">none</span>
+            <button disabled>Rock Wave</button> Launches a wave of rock that warps the earth and tosses foes caught in the wave about.
+        </p>
+        <p id="earth_smash" class="advanced">
+            <span class="style_requirement">none</span>
+            <span class="basic_requirement">none</span>
+            <button disabled>Earth Smash</button> One can easily obliterate earth and stone with punches and kicks using this technique.
+        </p>
+        <p id="quicksand" class="advanced">
+            <span class="style_requirement">none</span>
+            <span class="basic_requirement">none</span>
+            <button disabled>Earth Sink/Quicksand</button> Fully or partially sinks an opponent into the earth.
+        </p>
+        <p id="compact" class="advanced">
+            <span class="style_requirement">none</span>
+            <span class="basic_requirement">none</span>
+            <button disabled>Compact Earth/Stone</button> The ability to condense stone and earth down into super dense versions of themselves.
+        </p>
+        <p id="rock_gloves" class="advanced">
+            <span class="style_requirement">none</span>
+            <span class="basic_requirement">none</span>
+            <button disabled>Rock Gloves/Shoes</button> A Dai Li style of earth bending used to coat hands and feet in small dark rocks that can be used to stick to surfaces and can be remotely manipulated for offense and defense.
+        </p>
+        <p>Choose 1 special technique you'll be known for:</p>
+        <p id="metal_bending" class="special">
+            <span class="style_requirement">none</span>
+            <button disabled>Metal Bending</button> Extremely powerful but primitive form of metal bending that lacks refinement.
+        </p>
+        <p id="sand_bending" class="special">
+            <span class="style_requirement">si_wong</span>
+            <button disabled>Sand Bending</button> Allows for the bender to fully, easily, and fluidly manipulate particulate earth/stone/crystal matter. Adds sand variants to above options. Requires Si Wong Style.
+        </p>
+        <p id="seismic" class="special">
+            <span class="style_requirement">blind</span>
+            <button disabled>Seismic Sense</button> A 360-degree field of vision and sense through earth and stone via vibrations. Requires Blind Badgermole Style.
+        </p>
+        <p id="remote_earth" class="special">
+            <span class="style_requirement">none</span>
+            <button disabled>Remote Earth Bending</button> Typically it is required that the bender touch earth, though through this method they can pull earth/stone to them for use, and manipulate earth/stone at extremely long distances.
+        </p>
+        <p id="body_hammer" class="special">
+            <span class="style_requirement">thundering</span>
+            <button disabled>Body Hammer</button> An earth bending technique geared toward massic seismic attacks that split and shatter the earth. Requires Thundering Badgermole Style.
+        </p>
     </div>
 </div>
 
